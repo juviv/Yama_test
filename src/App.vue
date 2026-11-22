@@ -1,4 +1,5 @@
 <script setup>
+const baseUrl = import.meta.env.BASE_URL
 import { onMounted, onBeforeUnmount, computed, ref } from 'vue'
 import SlideWheel from './components/SlideWheel.vue'
 const currentSlide = ref(0)
@@ -92,35 +93,35 @@ onBeforeUnmount(() => {
         <div class="product-gallery">
           <figure class="dryer-card product-card">
             <figcaption class="product-label bg-[#545756] text-white">Фен</figcaption>
-            <img src="/images/slide_1_girl_with_hairdryer.png" alt="Укладка волос феном Yamaguchi"  class="w-full shadow-[0_8px_24px_-4px_rgba(65,60,57,0.25)]" fetchpriority="high">
+            <img :src="baseUrl + 'images/slide_1_girl_with_hairdryer.png'" alt="Укладка волос феном Yamaguchi"  class="w-full shadow-[0_8px_24px_-4px_rgba(65,60,57,0.25)]" fetchpriority="high">
           </figure>
           <figure class="dual-card flex flex-col items-center">
             <figcaption class="mt-6 rounded-full bg-white px-3 py-1 text-3xl font-semibold shadow-[9.95px_8.38px_15.71px_-3.14px_rgba(65,60,57,0.21)]">2 в 1</figcaption>
-            <img src="/images/slide_1_long_hair.png" alt="Фен и стайлер для длинных волос" width="674" height="546" class="hidden min-h-0 object-contain object-bottom md:block" fetchpriority="high">
+            <img :src="baseUrl + 'images/slide_1_long_hair.png'" alt="Фен и стайлер для длинных волос" width="674" height="546" class="hidden min-h-0 object-contain object-bottom md:block" fetchpriority="high">
           </figure>
           <figure class="styler-card product-card">
             <figcaption class="product-label bg-white">Стайлер</figcaption>
-            <img src="/images/slide_1_girl_with_styler.png" alt="Создание локонов стайлером Yamaguchi" width="245" height="429" class="w-full shadow-[0_8px_24px_-4px_rgba(65,60,57,0.25)]" fetchpriority="high">
+            <img :src="baseUrl + 'images/slide_1_girl_with_styler.png'" alt="Создание локонов стайлером Yamaguchi" width="245" height="429" class="w-full shadow-[0_8px_24px_-4px_rgba(65,60,57,0.25)]" fetchpriority="high">
           </figure>
         </div>
       </div>
     </section>
 
     <section :ref="el => slides[1] = el" class="presentation-slide" :class="slideState(1)" :inert="currentSlide !== 1" :aria-hidden="currentSlide !== 1" aria-labelledby="weight-title">
-      <div class="mobile-feature"><img src="/svg/feather.svg" alt=""> <span class="text-xl">ЛЁГКОСТЬ<br>И КОМФОРТ<br>В РУКЕ</span></div>
+      <div class="mobile-feature"><img :src="baseUrl + 'svg/feather.svg'" alt=""> <span class="text-xl">ЛЁГКОСТЬ<br>И КОМФОРТ<br>В РУКЕ</span></div>
       <div class="weight-panel slide-panel">
         <div class="weight-copy text-center text-white">
           <h1 id="weight-title" class="weight-title font-bold uppercase leading-none">Супер<span class="hidden md:inline">-<br></span>лёгкий</h1>
           <p class="weight-description mx-auto max-w-64 leading-relaxed">Уменьшает усталость рук при сушке волос, делая процедуру удобной и приятной даже после напряжённого рабочего дня.</p>
           <span class="weight-tag inline-block rounded-full bg-white px-6 py-1.5 text-xl font-semibold text-[#4d4d4d]">500 г</span>
         </div>
-        <img src="/images/slide_2_girl.png" alt="Девушка держит лёгкий стайлер и чашку кофе" width="669" height="800" class="weight-image hidden md:block" loading="lazy">
+        <img :src="baseUrl + 'images/slide_2_girl.png'" alt="Девушка держит лёгкий стайлер и чашку кофе" width="669" height="800" class="weight-image hidden md:block" loading="lazy">
         <p class="coffee-badge star-badge font-semibold">Не тяжелее<br>чашки кофе</p>
       </div>
     </section>
 
     <section :ref="el => slides[2] = el" class="presentation-slide" :class="slideState(2)" :inert="currentSlide !== 2" :aria-hidden="currentSlide !== 2" aria-labelledby="motor-title">
-      <div class="mobile-feature"><img src="/svg/wheel.svg" alt="" width="76"><span class="font-semibold">ИННОВАЦИОННЫЙ<br>ЯПОНСКИЙ МОТОР</span></div>
+      <div class="mobile-feature"><img :src="baseUrl + 'svg/wheel.svg'" alt="" width="76"><span class="font-semibold">ИННОВАЦИОННЫЙ<br>ЯПОНСКИЙ МОТОР</span></div>
       <div class="motor-panel slide-panel md:p-[clamp(1rem,4vmin,3rem)]">
         <h2 id="motor-title" class="motor-title font-bold uppercase text-center md:text-right">
           <span class="text-[33px] md:text-[29px]">Для ценителей </span>

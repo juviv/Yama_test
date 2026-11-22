@@ -3,7 +3,8 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import tailwindcss from '@tailwindcss/vite'
 
-export default defineConfig({
+export default defineConfig(({ command, isPreview }) => ({
+  base: command === 'build' || isPreview ? '/Yama_test/' : '/',
   plugins: [vue(), tailwindcss()],
   resolve: {
     alias: {
@@ -20,4 +21,4 @@ export default defineConfig({
     port: 4174,
     strictPort: true,
   },
-})
+}))

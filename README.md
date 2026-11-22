@@ -42,7 +42,7 @@ npm run build
 npm run preview
 ```
 
-Готовые файлы появляются в `dist/`. Предпросмотр сборки: http://127.0.0.1:4174.
+Готовые файлы появляются в `dist/`. Предпросмотр сборки: http://127.0.0.1:4174/Yama_test/.
 
 ## Окружение
 
@@ -53,3 +53,10 @@ npm run preview
 
 Tailwind подключён через официальный плагин `@tailwindcss/vite` и
 `@import "tailwindcss"` в CSS. Классы можно сразу использовать в `.vue`-файлах.
+
+## GitHub Pages
+
+В Settings → Pages → Source выберите GitHub Actions.
+Workflow `.github/workflows/deploy.yml` собирает и публикует сайт после push в main.
+Статус публикации доступен во вкладке Actions репозитория.
+Адрес сайта: https://juviv.github.io/Yama_test/.
